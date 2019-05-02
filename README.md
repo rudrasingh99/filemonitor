@@ -1,6 +1,6 @@
 ## filemonitor
 
-filemonitor takes care of the storage of the files you want to monitor. It uses Git to save the files, and to keep track of them. Git(Hub|Lab|Whatever) could take care of notifying you when changes are detected.
+filemonitor takes care of the storage of the files you want to monitor. It uses Git to save the files and to keep track of them. Git(Hub|Lab|Whatever) could take care of notifying you when changes are detected.
 
 Filemonitor uses the modified worker pool of [subfinder](https://github.com/subfinder/subfinder) (originally from https://github.com/stefantalpalaru/pool). The web pages/files are saved as `.txt` files, although we would love to have this changed in the near future.
 
@@ -13,16 +13,18 @@ Contributions are appreciated! The structure/performance has to be improved, sin
 go get github.com/kapytein/filemonitor
 ```
 
+2. Create an empty Git repository.
+
 2. You have to set two environment variables:
 
-`FILEMONITOR:` Location of your local Git repository
+`FILEMONITOR:` Path of the Git repository you have created
 
 `GIT_TOKEN:` We currently use personal access tokens for authentication (might have to change this in the future). GitHub, GitLab and Bitbucket provide such tokens. It's recommended to have them as restrictive as possible.
 
 3. The available flags:
 
 ```
-FILEMONITOR - Monitoring files at your wish
+FILEMONITOR v0.0.1 - Monitoring files at your wish.
 Usage of ./lol:
   -beautify
         Use this if you would like to have the file 'JS beautified' when saving.
@@ -37,7 +39,7 @@ Usage of ./lol:
 ```
 
 ## How to add a URL?
-If you supply a pattern, it will search for that pattern in the `src` attribute of a `script` element. Other elements are not supported yet. You can create an issue if you want something different implemented for dynamic analysis.
+If you supply a pattern, it will search for that pattern in the `src` attribute of `script` elements on the specified webpage. Other elements are not supported yet. You can create an issue if you have suggestions for different elements.
 
 `./filemonitor -url "https://google.nl" -pattern "/assets/application/main.*.js" -beautify`
 
@@ -55,11 +57,11 @@ Replace the dynamic value with a `*`. In above case, you would:
 
 > NOTE! Do not push/change anything in your local Git repository. Let filemonitor take care of your Git repository.
 
-You have to create cronjobs for that yourself. Filemonitor only helps you with the storage of the files. In order to start fetching the webpages, you run the following:
+You have to create cronjobs for that. Filemonitor only helps you with the storage of the files. In order to start fetching the webpages, you run the following:
 
 `./filemonitor -fetch true -threads 20`
 
-The tracked URL's are saved in `urls.json`, in the cwd. Once you have `cron` up and running (to fetch every X hours/days), you can use the push/commit notification service of GitHub.
+The tracked URL's are saved in `urls.json`, in the cwd. Once you have `cron` set up (to fetch every X hours/days), you can use the push/commit notification service of GitHub to be notified of changes. Filemonitor commits any changes found in webpages/javascript files.
 
 #### To-Do
 1. Use interfaces
