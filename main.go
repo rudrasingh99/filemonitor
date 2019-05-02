@@ -38,8 +38,6 @@ func main() {
 				log.Println("[!] Adding new entry..")
 				storage.AddURL(*url, false, "", *beautify)
 			}
-		} else if *pattern == "" {
-			fmt.Println("[!] Specify a pattern if we need to dynamically fetch the link. Example: /js/bundle.{}.js.")
 		} else {
 			fmt.Println("[!] No option selected")
 		}
