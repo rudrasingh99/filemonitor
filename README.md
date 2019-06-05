@@ -1,6 +1,6 @@
 ## filemonitor
 
-filemonitor takes care of the storage of the files you want to monitor. It uses Git to save the files and to keep track of them. Git(Hub|Lab|Whatever) could take care of notifying you when changes are detected.
+filemonitor takes care of the storage of the files you want to monitor. It uses Git to save the files and to keep track of them. A git service, such as GitHub, could take care of notifying you when changes are detected.
 
 Filemonitor uses the modified worker pool of [subfinder](https://github.com/subfinder/subfinder) (originally from https://github.com/stefantalpalaru/pool). The web pages/files are saved as `.txt` files, although we would love to have this changed in the near future.
 
@@ -39,8 +39,9 @@ Usage of ./lol:
 ```
 
 ## How to add a URL?
-If you supply a pattern, it will search for that pattern in the `src` attribute of `script` elements on the specified webpage. Other elements are not supported yet. You can create an issue if you have suggestions for different elements.
+If you provide a pattern, it will search for that pattern in the `src` attribute of `script` elements on the specified webpage. Other elements are not supported yet. You can create an issue if you have suggestions for different elements.
 
+The `beautify` flag will beautify the contents upon saving as well.
 `./filemonitor -url "https://google.nl" -pattern "/assets/application/main.*.js" -beautify`
 
 ## How do I specify a pattern?
