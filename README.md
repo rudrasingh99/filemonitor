@@ -19,7 +19,7 @@ go get github.com/kapytein/filemonitor
 
 `FILEMONITOR:` Path of the Git repository you have created
 
-`GIT_TOKEN:` filemonitor currently use personal access tokens for authentication (might have to change this in the future). GitHub, GitLab and Bitbucket provide such tokens. It's recommended to have them as restrictive as possible.
+`GIT_TOKEN:` filemonitor currently uses personal access tokens for authentication (might have to change this in the future). GitHub, GitLab and Bitbucket provide such tokens. It's recommended to have them as restrictive as possible.
 
 3. The available flags:
 
