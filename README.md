@@ -62,7 +62,7 @@ You have to create cronjobs for that. Filemonitor only helps you with the storag
 
 `./filemonitor -fetch true -threads 20`
 
-The tracked URL's are saved in `urls.json`, in the cwd. Once you have `cron` set up (to fetch every X hours/days), you can use the push/commit notification service of GitHub to be notified of changes. Filemonitor commits any changes found in webpages/javascript files.
+The tracked URLs are saved in `urls.json`, in the cwd. Once you have `cron` set up (to fetch every X hours/days), you can use the push/commit notification service of GitHub to be notified of changes. Filemonitor commits any changes found in webpages/javascript files.
 
 #### To-Do
 1. Use interfaces
