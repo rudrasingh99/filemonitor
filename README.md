@@ -1,6 +1,6 @@
 ## filemonitor
 
-filemonitor takes care of the storage of the files you want to monitor. It uses Git to save the files and to keep track of them. A git service, such as GitHub, could take care of notifying you when changes are detected.
+filemonitor is a tool which monitors given web pages, such as JS files. It uses a Git repository to store the HTTP responses of the page. Whenever there's a change detected, filemonitor commits the current version of the web page to the repository. This allows you to receive notifications via triggers on Git services.
 
 Filemonitor uses the modified worker pool of [subfinder](https://github.com/subfinder/subfinder) (originally from https://github.com/stefantalpalaru/pool). The web pages/files are saved as `.txt` files, although we would love to have this changed in the near future.
 
