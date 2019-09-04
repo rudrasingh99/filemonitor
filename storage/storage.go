@@ -9,8 +9,6 @@ import (
 	"strings"
 	"time"
 
-	util "github.com/kapytein/filemonitor/util"
-
 	"github.com/ditashi/jsbeautifier-go/jsbeautifier"
 	uuid "github.com/satori/go.uuid"
 	git "gopkg.in/src-d/go-git.v4"
@@ -41,7 +39,9 @@ func AddURL(name string, dynamic bool, pattern string, beautify bool) {
 
 	var err error
 	id, err := uuid.NewV4()
-	util.CheckError(err)
+	if err != nil {
+		log.Println(err)
+	}
 
 	// make sure we got an updated entries global
 	loadFile()
@@ -50,10 +50,14 @@ func AddURL(name string, dynamic bool, pattern string, beautify bool) {
 	entries := append(entries.Urls, trackEntry)
 
 	f, err := json.Marshal(entries)
-	util.CheckError(err)
+	if err != nil {
+		log.Println(err)
+	}
 
 	err = ioutil.WriteFile("urls.json", f, 644)
-	util.CheckError(err)
+	if err != nil {
+		log.Println(err)
+	}
 }
 
 func GetEntries() *TrackEntries {
@@ -66,10 +70,14 @@ func GetEntries() *TrackEntries {
 func loadFile() {
 	var err error
 	currentUrls, err := ioutil.ReadFile("urls.json")
-	util.CheckError(err)
+	if err != nil {
+		log.Println(err)
+	}
 
 	err = json.Unmarshal(currentUrls, &entries.Urls)
-	util.CheckError(err)
+	if err != nil {
+		log.Println(err)
+	}
 
 }
 
