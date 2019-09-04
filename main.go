@@ -1,12 +1,13 @@
 package main
 
 import (
-	"filemonitor/observer"
-	"filemonitor/storage"
 	"flag"
 	"fmt"
 	"log"
 	"os"
+
+	"github.com/kapytein/filemonitor/observer"
+	"github.com/kapytein/filemonitor/storage"
 )
 
 func main() {

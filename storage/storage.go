@@ -2,13 +2,14 @@ package storage
 
 import (
 	"encoding/json"
-	util "filemonitor/util"
 	"fmt"
 	"io/ioutil"
 	"log"
 	"os"
 	"strings"
 	"time"
+
+	util "github.com/kapytein/filemonitor/util"
 
 	"github.com/ditashi/jsbeautifier-go/jsbeautifier"
 	uuid "github.com/satori/go.uuid"

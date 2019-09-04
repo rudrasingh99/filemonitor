@@ -2,15 +2,16 @@ package observer
 
 import (
 	"bytes"
-	"filemonitor/storage"
-	pool "filemonitor/util"
-	util "filemonitor/util"
 	"fmt"
 	"io"
 	"log"
 	"net/url"
 	"os"
 	"strings"
+
+	"github.com/kapytein/filemonitor/storage"
+	pool "github.com/kapytein/filemonitor/util"
+	util "github.com/kapytein/filemonitor/util"
 
 	"github.com/PuerkitoBio/goquery"
 	"github.com/tidwall/match"
